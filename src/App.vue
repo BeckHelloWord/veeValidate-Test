@@ -2,7 +2,6 @@
 <template>
   <div class="abc">
     <router-view></router-view>
-    <div class="footer" v-show="show">主组件</div>
   </div>
 </template>
 

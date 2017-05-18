@@ -17,7 +17,8 @@
     </label>
     <label>
       银行卡：
-      <input type="text" />
+      <input type="text"  v-validate="'required|verify_coupon'"  name="bankCode"/>
+      <span v-show="errors.has('bankCode')" class="help is-danger">{{ errors.first('bankCode') }}</span>
     </label>
     <label>
       手机号：

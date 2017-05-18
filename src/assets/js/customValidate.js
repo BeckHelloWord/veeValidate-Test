@@ -36,11 +36,21 @@ import { Validator } from 'vee-validate';
 */
 Validator.extend('abc', {
     messages: {
-      zh_CN:field => field+':' +'abc',
+        zh_CN: field => field + ':' + 'abc',
     },
     validate: value => {
         return value.length == 11 && /^((13|14|15|17|18)[0-9]{1}\d{8})$/.test(value)
     }
+});
+
+/*
+*异步验证****
+*/
+Validator.extend('verify_coupon', {
+    getMessage: (field) => `The ${field} is not a valid coupon.`,
+    validate: (value) => new Promise(resolve => {
+        console.log(1)
+    })
 });
 
 
