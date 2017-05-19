@@ -8,7 +8,7 @@
     </label>
     <label>
       邮箱：
-      <input v-validate="'required|abc'"  type="text" name="email">
+      <input v-validate="'required|abc'"  type="text" name="email" data-vv-as="邮箱">
       <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
     </label>
     <label>
@@ -30,11 +30,11 @@
     </label>
         <label>
       密码：
-      <input type="password" name="password"/>
+      <input type="password" name="password" data-vv-as=" "/>
     </label>
         <label>
       确认密码：
-      <input type="password" v-validate="'confirmed:password'" name="configPassword"/>
+      <input type="password" v-validate="'confirmed:password'" name="configPassword"  data-vv-as="Address Line 1"/>
     </label>
     <span v-show="errors.has('configPassword')" class="help is-danger">{{ errors.first('configPassword') }}</span>
   </div>
